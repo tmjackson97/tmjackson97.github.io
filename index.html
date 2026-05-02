@@ -1,78 +1,463 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <html lang="en"> 
-    <meta charset="UTF-8">
-    <title>Taylor Jackson, Resume</title>
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taylor Jackson - Resume</title>
 
-<body style="margin:0; font-family: Arial, Helvetica, sans-serif; line-height:1.5; background:whitesmoke;">
-   
-    <img src="profilepic.jpg" alt="self-image" width="125" height="125" style="border-radius: 50%;">
-    <h1 style="margin:0">Taylor Jackson</h1>
-    <a href="table.html" style="margin-right: 15px;">Projects</a>
-    <a href="form.html" style="margin-right: 15px;">Visitor Survey</a>
-    <a href="https://www.linkedin.com/in/taylorjacksonnc/">Linkedin</a>
-    
-    <h2>Summary</h2>
-    
-    <p>Security-minded and technically curious IT professional with a hands-on, problem-solving approach to technology. CompTIA Security+ certified, with experience across networking, systems, and cybersecurity through real-world labs and practical training. Known for adaptability, attention to detail, and a strong interest in understanding how systems work and how to make them more reliable and secure. Motivated by continuous learning and contributing to effective, resilient technical environments.</p>
-<h2>Technical Skills</h2>
-    <ul>
-        <li style="margin-bottom: 8px;">Security Monitoring: Log analysis, triage, and escalation</li>
-        <li style="margin-bottom: 8px;">Networking: Routers, switches, VPNs, firewalls, wireless infrastructure</li>
-        <li style="margin-bottom: 8px;">Troubleshooting: Hardware (PCs, laptops, printers), software, remote diagnostics</li>
-        <li style="margin-bottom: 8px;">Operating Systems: Windows, Linux (Ubuntu, Kali)</li>
-        <li style="margin-bottom: 8px;">Security Tools: Wireshark, Nmap, Metasploit, Nessus, Burp Suite, Splunk, Elastic Stack, Surricata, Snort, Autopsy, FTKimager</li>
-        <li style="margin-bottom: 8px;">Programming/Scripting: Python, Bash, Powershell</li>
-    </ul>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <h2>Certifications</h2>
-    <ul>
-        <li>CompTIA Security+ (SY0-701) - Issued July 2024</li>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  background: #f8f9fa;
+  color: #1a1a1a;
+  padding: 40px 20px;
+}
 
-    </ul>
-    
-    <h2>Experience</h2>
-    <h4>Freelance Projects and Home Labs | Remote | 2021-Present</h4>
-    <ul>
-        <li style="margin-bottom: 8px;">Identified and documented 10+ exposed ICS/OT Automated Tank Gauge (ATG) systems through OSINT tools such as Shodan, demonstrating passive reconnaissance and critical infrastructure risk assessment.</li>
-        <li style="margin-bottom: 8px;">Submitted a coordinated vulnerability disclosure to CISA, following industry-standard responsible disclosure practices and highlighting systemic misconfigurations affecting multiple critical infrastructure sites.</li>
-        <li style="margin-bottom: 8px;">Investigated Windows-based endpoint and network threats by analyzing logs in Splunk and Elastic Stack.</li>
-        <li style="margin-bottom: 8px;">Built and managed a virtual home lab environment simulating enterprise networks to practice incident response and detection workflows.</li>
-        <li style="margin-bottom: 8px;">Configured and fine-tuned Suricata and Snort for IDS/IPS use cases; analyzed alerts and improved rule sets based on threat behavior.</li>
-        <li style="margin-bottom: 8px;">Developed and tested YARA rules for identifying malicious files and anomalous patterns during malware analysis exercises.</li>
-        <li style="margin-bottom: 8px;">Conducted hands-on adversary emulation using tools such as Responder, Mimikatz, and Wireshark to better understand lateral movement and credential attacks.</li>
-    </ul>
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.header {
+  position: relative;
+  background: linear-gradient(135deg, #434656 0%, #3c40c2 100%);
+  color: #ffffff;
+  padding: 36px;
+}
 
-    <h4>Bartender | Circa 1800, Fayetteville, NC | May 2018-Present</h4>
-    <ul>
-        <li style="margin-bottom: 8px;">Provided excellent customer service in a fast-paced environment, demonstrating strong communication and interpersonal skills.</li>
-        <li style="margin-bottom: 8px;">Managed cash and credit transactions accurately, ensuring accountability and attention to detail.</li>
-        <li style="margin-bottom: 8px;">Trained new staff on company policies and procedures, showcasing leadership and teamwork abilities.</li>
-    </ul>
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
 
-    <h4>Service Clerk | Postnet, Lumberton, NC | September 2012 - Mar 2022</h4>
-    <ul>    
-        <li style="margin-bottom: 8px;">Troubleshot computers and computer peripherals for store operations.</li>
-        <li style="margin-bottom: 8px;">Provided guidance to customers on printing, graphic design, and shipping services.</li>
-        <li style="margin-bottom: 8px;">Used Adobe Creative Cloud (Photoshop) and Microsoft 365 programs daily. </li>    
-    </ul>   
-    
-    <h2>Education</h2>
-    <ul>
-        <li style="margin-bottom: 8px;">Fayetteville Technical Community College | Pursuing Associate in Applied Science in IT/Cybersecurity | Expected Graduation: December 2026</li>
-        <li style="margin-bottom: 8px;">High School Diploma | Robeson Community College | 2016</li>
-    </ul>
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.3);
+  object-fit: cover;
+}
 
-    <h2>Location </h2>
-    <address>
-        Fayetteville, North Carolina
+.header-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.location {
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+
+.header-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+
+.header-links a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+}
+
+.header-links a:hover {
+  text-decoration: underline;
+}
+
+.actions {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+}
+
+.print-btn {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.content {
+  padding: 48px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 15px;
+  color: #4a4a4a;
+  margin-bottom: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+.skills-list li,
+.cert-list li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.skills-list li::before,
+.cert-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.job-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.job-meta {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+  .experience-item ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+.experience-item ul li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  color: #4a4a4a;
+  font-size: 15px;
+}
+
+.experience-item ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.case-study {
+  background: #f9fafb;
+  border-left: 4px solid #667eea;
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.print-contact {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body { padding: 16px 10px; }
+
+  .header { padding: 32px 24px; }
+  .content { padding: 32px 24px; }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-links {
+    justify-content: center;
+  }
+
+  .actions {
+    position: static;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* --- UPDATED PRINT RULES FOR 1-PAGE OUTPUT --- */
+@media print {
+  @page { 
+    margin: 0.4in 0.4in; /* Tighter margins to maximize space */
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .container {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  .header {
+    background: transparent !important;
+    color: #000 !important;
+    padding: 0 0 10px 0 !important;
+    min-height: 0 !important;
+    border-bottom: 2px solid #3c40c2;
+    margin-bottom: 15px !important;
+  }
+
+  .profile-image, .actions, #contact-email, #contact-linkedin, .separator {
+    display: none !important;
+  }
+
+  .header-text h1 {
+    font-size: 22pt !important;
+    color: #000 !important;
+  }
+
+  .location {
+    font-size: 10pt;
+    color: #333;
+  }
+
+  .print-contact {
+    display: block !important;
+    color: #000;
+    font-size: 10pt;
+    opacity: 1;
+    margin-top: 5px;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  section {
+    margin-bottom: 15px !important;
+    page-break-inside: avoid; /* Keeps sections from splitting across pages */
+  }
+
+  h2 {
+    font-size: 10pt !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+  }
+
+  p, li {
+    font-size: 9.5pt !important; /* Scaled down for print efficiency */
+    line-height: 1.35 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .job-title {
+    font-size: 11pt !important;
+  }
+
+  .job-meta {
+    font-size: 9pt !important;
+    margin-bottom: 4px !important;
+  }
+
+  .case-study {
+    padding: 12px 16px !important;
+    background: #fff !important;
+    border: 1px solid #eee;
+  }
+  
+  /* Additional vertical squeeze for the freelance list */
+  .experience-item ul li {
+    margin-bottom: 4px !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="header">
+  <div class="header-content">
+    <img src="profilepic.jpg" alt="Taylor Jackson" class="profile-image" />
+
+    <div class="header-text">
+      <h1>Taylor Jackson</h1>
+      <div class="location">Fayetteville, North Carolina</div>
+
+      <div class="header-links">
+        <a id="contact-email" href="mailto:tmjackson97@gmail.com">Email</a>
+        <span class="separator">|</span>
+        <a id="contact-linkedin" href="https://www.linkedin.com/in/taylorjacksonnc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+        <span class="print-contact">
+          tmjackson97@gmail.com • (910) 301-9628 • linkedin.com/in/taylorjacksonnc/
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</header>
+
+<div class="content">
+
+      <section>
+        <h2>Summary</h2>
+        <p>Security+ certified cybersecurity professional with hands-on experience in SOC operations, including SIEM monitoring, alert triage, and incident investigation. Experienced in analyzing network and endpoint activity, correlating security events, and identifying threats through lab environments, CTF competitions, and real-world vulnerability disclosure coordinated with CISA.</p>
+      </section>
+      
+      <section>
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+          <li>Security Monitoring: Log analysis, triage, and escalation</li>
+          <li>Networking: Routers, switches, VPNs, firewalls, wireless infrastructure</li>
+          <li>Security Operations: SIEM monitoring, alert triage, incident response, log analysis.</li>
+          <li>Operating Systems: Windows, Linux (Ubuntu, Kali)</li>
+          <li>Security Tools: Wireshark, Nmap, Metasploit, Nessus, Burp Suite, Splunk, Elastic Stack, Suricata, Snort, Autopsy, FTK Imager</li>
+          <li>Programming/Scripting: Python, Bash, PowerShell</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Certifications</h2>
+        <ul class="cert-list">
+          <li>CompTIA Security+ (SY0-701) - Issued July 2024</li>
+        </ul>
+      </section>
+<section>
+  
+  <h2>Security Case Study</h2>
+  <div class="case-study">
+    <p>
+      While conducting independent, passive OSINT research using publicly available tools,
+      I identified multiple internet-exposed Automated Tank Gauge (ATG) systems associated
+      with fuel infrastructure.
+    </p>
+    <p>
+      To remain within ethical and legal boundaries, all activity was limited to
+      non-intrusive observation. No authentication attempts, exploitation, or interaction
+      with live systems was performed. Exposure was validated through publicly observable indicators only,
+      with care taken to avoid any action that could impact system availability or behavior.
+    </p>
+    <p>
+      After documenting more than ten exposed systems, I analyzed common misconfigurations and assessed
+      potential operational and safety risks associated with publicly accessible ICS/OT components.
+      Findings were compiled into a structured report designed to clearly communicate risk to
+      non-technical stakeholders.
+    </p>
+    <p>
+      Following responsible disclosure practices, the findings were submitted to
+      CISA through a coordinated disclosure process. The focus was on highlighting
+      broader infrastructure risk trends rather than identifying individual organizations.
+    </p>
+    <p>
+      This case study reflects my approach to security work: careful scoping, ethical restraint,
+      clear documentation, and effective communication of real-world risk.
+    </p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Capture The Flag (CTF) Competitions</h2>
+  <ul class="skills-list">
+    <li>
+      Achieved <strong>3rd place</strong> in a National Guard–hosted cybersecurity CTF at Fayetteville Technical Community College while competing <strong>solo against full teams</strong>; solved challenges in PCAP analysis, digital forensics, enumeration, AI prompt injection and web exploitation.
+    </li>
+    <li>Competed in the North Carolina National Guard statewide Minuteman Cyber Cup, placing 12th out of 32 teams; led my team in points by solving challenges in OSINT, network analysis, and web exploitation.</li>
+  </ul>
+</section>
+      
+      <section>
+        <h2>Experience</h2>
+        
+                <div class="experience-item">
+          <div class="job-title">Cybersecurity Intern</div>
+          <div class="job-meta">Carolina Cyber Network - Remote | Aug 2025–Dec 2025 (160 hours)</div>
+          <ul>
+           <li>Gained hands-on experience in Security Operations Center (SOC) workflows, including alert monitoring, triage, and incident investigation.</li>
+           <li>Identified and analyzed simulated threats, reinforcing understanding of SOC workflows and incident response processes.</li>
+           <li>Analyzed security events and logs using SIEM tools to identify suspicious activity and potential threats.</li>
+           <li>Applied blue team methodologies to detect, investigate, and respond to simulated attack scenarios.</li>
+           <li>Utilized tools such as Wireshark and vulnerability scanning platforms to support threat analysis and network monitoring.</li>
+           <li>Documented findings and contributed to incident reports, improving understanding of response procedures and escalation processes.</li>
+           <li>Developed foundational knowledge of attacker techniques and defensive strategies through practical lab exercises and guided training.</li>
+          </ul>
+        </div>
+
+
+        <div class="experience-item">
+          <div class="job-title">Security Projects and SOC Lab Experience</div>
+          <div class="job-meta">Remote | 2021–Present</div>
+          <ul>
+            <li>Identified and documented 10+ exposed ICS/OT Automated Tank Gauge (ATG) systems through OSINT tools such as Shodan, demonstrating passive reconnaissance and critical infrastructure risk assessment.</li>
+            <li>Submitted a coordinated vulnerability disclosure to CISA, following industry-standard responsible disclosure practices and highlighting systemic misconfigurations affecting multiple critical infrastructure sites.</li>
+            <li>Investigated Windows-based endpoint and network threats by analyzing logs in Splunk and Elastic Stack.</li>
+            <li>Built and managed a virtual home lab environment simulating enterprise networks to practice incident response and detection workflows.</li>
+            <li>Configured and fine-tuned Suricata and Snort for IDS/IPS use cases; analyzed alerts and improved rule sets based on threat behavior.</li>
+            <li>Developed and tested YARA rules for identifying malicious files and anomalous patterns during malware analysis exercises.</li>
+            <li>Conducted hands-on adversary emulation to better understand lateral movement and credential attacks.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <div class="job-title">Bartender</div>
+          <div class="job-meta">Circa 1800, Fayetteville, NC | May 2018–Present</div>
+          <ul>
+            <li>Provides excellent customer service in a fast-paced environment, demonstrating strong communication and interpersonal skills.</li>
+            <li>Manages cash and credit transactions accurately, ensuring accountability and attention to detail.</li>
+            <li>Trains new staff on company policies and procedures, showcasing leadership and teamwork abilities.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <div class="job-title">Service Clerk</div>
+          <div class="job-meta">Postnet, Lumberton, NC | Sep 2012–Mar 2022</div>
+          <ul>
+            <li>Troubleshot computers and computer peripherals for store operations.</li>
+            <li>Provided guidance to customers on printing, graphic design, and shipping services.</li>
+            <li>Used Adobe Creative Cloud (Photoshop) and Microsoft 365 programs daily.</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Education</h2>
+        <div class="education-item">
+          <div class="job-title">Associate of Applied Science in IT/Cybersecurity</div>
+          <div class="job-meta">Fayetteville Technical Community College | Expected May 2027</div>
+        </div>
+      </section>
+    </div>
+  </div>
 </body>
-
-<br>
-
-<footer>
-    <hr>
-   <a href="mailto:tmjackson97@gmail.com">tmjackson97@gmail.com</a>
-</footer>
 </html>
